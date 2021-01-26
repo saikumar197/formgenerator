@@ -1,0 +1,31 @@
+{
+	"name": "@trilogy-devkit/forms",
+	"version": "0.0.1",
+	"description": "A Trilogy Form schematics",
+	"scripts": {
+		"build": "rm -Rf ./dist && tsc -p tsconfig.json && cp -r src/forms/templates dist/forms/templates",
+		"test": "npm run build && jasmine src/**/*_spec.js"
+	},
+	"keywords": [
+		"trilogy",
+		"schematics"
+	],
+	"author": "Saikumar S",
+	"license": "Everi",
+	"schematics": "./src/collection.json",
+	"dependencies": {
+		"@angular-devkit/core": "^9.1.13",
+		"@angular-devkit/schematics": "^9.1.13",
+		"@angular-devkit/schematics-cli": "^0.1100.5",
+		"@angular/core": "^11.0.5",
+		"typescript": "~3.7.4"
+	},
+	"devDependencies": {
+		"@angular/cdk": "^9.2.4",
+		"@angular/cli": "^9.1.13",
+		"@schematics/angular": "^9.1.13",
+		"@types/jasmine": "^3.6.2",
+		"@types/node": "^12.19.12",
+		"jasmine": "^3.6.3"
+	}
+}

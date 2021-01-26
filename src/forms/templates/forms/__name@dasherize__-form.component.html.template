@@ -1,0 +1,31 @@
+<form
+  [formGroup]="this.<%= camelize(name) %>Form"
+  name="<%= dasherize(name + 'Form') %>"
+>
+  <div class="row align-items-start"><% for(let prop of formJsonObj.properties) { %><%= prop.renderFormField(prop) %> <% } %>
+  </div>
+     <div class="row">
+      <div class="col-6 d-flex justify-content-start w-25 p-3">
+        <button
+          type="reset"
+          [disabled]="!this.<%= camelize(name) %>Form.touched"
+          (click)="onReset()"
+          class="btn btn-danger"
+          name="reset"
+        >
+          Clean Form
+        </button>
+      </div>
+      <div class="col-6 d-flex justify-content-end w-25 p-3">
+        <button
+          type="submit"
+          [disabled]="!this.<%= camelize(name) %>Form.valid"
+          (click)="onSubmit()"
+          name="submit"
+          class="btn btn-primary"
+        >
+          Submit
+        </button>
+      </div>
+    </div>
+  </form>
