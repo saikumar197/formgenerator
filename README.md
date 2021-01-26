@@ -9,24 +9,19 @@ To test this schematic you must follow the steps:
 1. Install dependencies on form generator folder
 
 ```
-cd form-generator
+cd formgenerator
 npm install
 npm run build
 ```
 
-2. Install dependencies on project example to test the generator
+2. By npm linking ,link in your project by folder linking or by package 
 
 ```
-cd example/angular-template
-npm install
+npm link ../formgenerator/forms
 ```
+3.By`npm pack` command, generates a `.tgz` file which can be installed anywhere in schematics-cli
 
-3. Inside the angular-template folder type:
-
-```
-npm link ../../
-npm start
-```
+`npm install ../formgenerator/forms/schematics-forms.tgz`
 
 Now you can proccede creating forms component and testing the generator.
 
@@ -46,18 +41,6 @@ or
 ng g f path/name-component ./jsons/schema.json
 ```
 
-Options Available:
-
-| Option                    | Type    | Description                                                           | Enums               | Default |
-| ------------------------- | ------- | --------------------------------------------------------------------- | ------------------- | ------- |
-| --name, first argv        | string  | Custom component name. What name would you like to use for the forms? |                     |         |
-| --config, -c, second argv | string  | Config file to the forms. What the name of the config file?           |                     |         |
-| --style                   | string  | The file extension to be used for style files.                        |                     | scss    |
-| --viewEncapsulation, -v   | string  | Specifies the view encapsulation strategy.                            | "Emulated", "None"  |         |
-| --prefix, -p              | string  | The prefix to apply to generated selectors.                           |                     | app     |
-| --changeDetection, -cd    | string  | Specifies the change detection strategy.                              | "Default", "OnPush" | Default |
-| --export, -e              | boolean | Specifies if declaring module exports the component.                  |                     | false   |
-| --entryComponent          | boolean | Specifies if the component is an entry component of declaring module. |                     | false   |
 
 ## How to configure this schematic in another project
 
@@ -90,33 +73,7 @@ will stay:
 }
 ```
 
-## Necessary imports
 
-```
-    ReactiveFormsModule,
-    FormsModule,
-    NgxMaskModule.forRoot({
-        validation: true
-    })
-```
-
-## Output Example
-
-![Output](output/output.png)
-
-## Backlog
-
--   [x] Support input elements
--   [x] Support input types
--   [x] Masks using ngx-masks (zipCode, cpf, phoneNumber, etc)
--   [x] Created formBuilder
--   [x] Required validation
--   [x] Submit and reset actions
--   [x] Pattern, maxlength, minlength, min and max validations
--   [x] Showing label
--   [x] Created interface from formBuilder value
--   [x] Update module declarations and add ReactiveFormsModule and FormsModule
--   [ ] Add to npm
 
 ## Testing
 
@@ -147,6 +104,3 @@ That's it!
 
 Pickup an item on backlog, create an issue and submit the PR.
 
-## Licence
-
-Everi licence, check [LICENSE.md](LICENSE.md)
