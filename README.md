@@ -55,7 +55,7 @@ npm run build
 2. You should install the schematic in your project
 
 ```
-npm link ../path-forms/forms-generator
+npm link ../formgenerator/forms
 ```
 
 Inside your angular json in "cli" key you should add:
